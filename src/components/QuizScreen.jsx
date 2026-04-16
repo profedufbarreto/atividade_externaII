@@ -1,0 +1,27 @@
+import React from 'react';
+import { questions } from '../questions';
+
+export default function QuizScreen({ currentQuestionIndex, onAnswer }) {
+  const question = questions[currentQuestionIndex];
+
+  return (
+    <div className="glass-panel fade-enter" key={question.id}>
+      <div style={{ marginBottom: '20px', color: 'var(--primary)', fontWeight: 'bold' }}>
+        Pergunta {currentQuestionIndex + 1} de {questions.length}
+      </div>
+      <h2>{question.text}</h2>
+      
+      <div style={{ marginTop: '30px' }}>
+        {question.options.map((option, index) => (
+          <button 
+            key={index}
+            className="option-btn"
+            onClick={() => onAnswer(option.category)}
+          >
+            {option.text}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}

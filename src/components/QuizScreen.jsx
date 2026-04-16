@@ -1,8 +1,9 @@
 import React from 'react';
-import { questions } from '../questions';
 
-export default function QuizScreen({ currentQuestionIndex, onAnswer }) {
+export default function QuizScreen({ questions, currentQuestionIndex, onAnswer }) {
   const question = questions[currentQuestionIndex];
+
+  if (!question) return null;
 
   return (
     <div className="glass-panel fade-enter" key={question.id}>
@@ -11,7 +12,7 @@ export default function QuizScreen({ currentQuestionIndex, onAnswer }) {
       </div>
       <h2>{question.text}</h2>
       
-      <div style={{ marginTop: '30px' }}>
+      <div style={{ marginTop: '30px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
         {question.options.map((option, index) => (
           <button 
             key={index}

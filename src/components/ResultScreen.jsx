@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, Laptop, BookOpen, HandHeart, Mic, HeartPulse, MonitorSmartphone, Scissors } from 'lucide-react';
+import { Sparkles, Laptop, BookOpen, HandHeart, Mic, HeartPulse, MonitorSmartphone, Scissors, Home } from 'lucide-react';
 
 export default function ResultScreen({ name, scores, onRestart }) {
   const highestScoreObj = Object.entries(scores).reduce((max, curr) => curr[1] > max[1] ? curr : max);
@@ -56,9 +56,14 @@ export default function ResultScreen({ name, scores, onRestart }) {
       <h2 style={{ color: 'var(--primary)', fontSize: '2rem' }}>{result.title}</h2>
       <p style={{ marginTop: '20px', lineHeight: '1.6' }}>{result.description}</p>
       
-      <button onClick={onRestart} className="btn-primary" style={{ marginTop: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+      <button onClick={onRestart} className="btn-primary" style={{ marginTop: '20px', marginBottom: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
         <Sparkles size={20} />
         Refazer o Quiz
+      </button>
+
+      <button onClick={() => window.location.reload()} className="btn-secondary" style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+        <Home size={20} />
+        Voltar ao Início
       </button>
     </div>
   );

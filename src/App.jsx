@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
+import Launchpad from './components/Launchpad';
 import IntroScreen from './components/IntroScreen';
 import QuizScreen from './components/QuizScreen';
 import ResultScreen from './components/ResultScreen';
+import TicTacToe from './components/TicTacToe';
 import { questions as allQuestions } from './questions';
 
 function App() {
-  const [currentScreen, setCurrentScreen] = useState('intro'); // intro, quiz, result
+  const [currentScreen, setCurrentScreen] = useState('launchpad'); // launchpad, intro, quiz, result, tictactoe
   const [userName, setUserName] = useState('');
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [quizQuestions, setQuizQuestions] = useState([]);
@@ -51,8 +53,16 @@ function App() {
 
   return (
     <>
+      {currentScreen === 'launchpad' && (
+        <Launchpad onSelect={setCurrentScreen} />
+      )}
+
       {currentScreen === 'intro' && (
-        <IntroScreen onStart={handleStart} />
+        <IntroScreen onStart={handleStart} onBack={() => setCurrentScreen('launchpad')} />
+      )}
+
+      {currentScreen === 'tictactoe' && (
+        <TicTacToe onBack={() => setCurrentScreen('launchpad')} />
       )}
 
       {currentScreen === 'quiz' && quizQuestions.length > 0 && (

@@ -7,6 +7,7 @@ import TicTacToe from './components/TicTacToe';
 import Gallery from './components/Gallery';
 import BackgroundSlideshow from './components/BackgroundSlideshow';
 import LeveMenteHub from './components/LeveMenteHub';
+import SnakeGame from './components/SnakeGame';
 import { questions as allQuestions } from './questions';
 
 function App() {
@@ -75,6 +76,10 @@ function App() {
 
       {currentScreen === 'levemente' && (
         <LeveMenteHub onBack={() => setCurrentScreen('launchpad')} />
+      )}
+
+      {currentScreen === 'snake' && (
+        <SnakeGame onBack={() => setCurrentScreen('launchpad')} />
       )}
 
       {currentScreen === 'quiz' && quizQuestions.length > 0 && (

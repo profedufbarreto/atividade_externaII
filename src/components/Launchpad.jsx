@@ -1,4 +1,4 @@
-import { Gamepad2, GraduationCap, Camera, Heart } from 'lucide-react';
+import { Gamepad2, GraduationCap, Camera, Heart, Apple } from 'lucide-react';
 import { BrandFlight, LogoCircle } from './BrandElements';
 import LocationBanner from './LocationBanner';
 import MapModal from './MapModal';
@@ -57,6 +57,17 @@ export default function Launchpad({ onSelect }) {
           </div>
           <span className="card-title">LeveMente</span>
           <span className="card-desc">Saúde mental e bem-estar</span>
+        </button>
+
+        <button 
+          onClick={() => onSelect('snake')}
+          className="option-btn launch-card"
+        >
+          <div className="icon-wrapper game" style={{ background: 'rgba(255, 255, 255, 0.1)' }}>
+            <Apple size={40} color="#ef4444" />
+          </div>
+          <span className="card-title">Jogo da Cobrinha</span>
+          <span className="card-desc">Diversão clássica</span>
         </button>
       </div>
 

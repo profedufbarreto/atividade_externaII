@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
+import { BrandFlight, LogoCircle } from './BrandElements';
 
 export default function IntroScreen({ onStart, onBack }) {
   const [name, setName] = useState('');
@@ -13,8 +13,11 @@ export default function IntroScreen({ onStart, onBack }) {
 
   return (
     <div className="glass-panel fade-enter">
-      <h1>Descubra seu Caminho!</h1>
-      <p>Um quiz super rápido para descobrir qual área combina mais com a sua vibe única. Preparado(a)?</p>
+      <LogoCircle />
+      <BrandFlight style={{ bottom: '10%', right: '-5%', transform: 'rotate(-5deg) scale(1.5)', opacity: 0.05 }} />
+      
+      <h1 style={{ position: 'relative', zIndex: 1 }}>Descubra seu Caminho</h1>
+      <p style={{ position: 'relative', zIndex: 1 }}>Um quiz rápido para descobrir qual área do Senac combina mais com seu perfil. Preparado(a)?</p>
       
       <form onSubmit={handleSubmit}>
         <input 

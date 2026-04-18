@@ -1,16 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
 
 :root {
-  --primary: #6366f1;
-  --primary-hover: #4f46e5;
-  --secondary: #ec4899;
-  --bg-gradient-start: #0f172a;
-  --bg-gradient-end: #1e1b4b;
-  --text-primary: #f8fafc;
-  --text-secondary: #cbd5e1;
-  --glass-bg: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.1);
+  --primary: #004a8e; /* Senac Blue */
+  --primary-hover: #003668;
+  --secondary: #f29100; /* Senac Orange */
+  --secondary-hover: #d17d00;
+  --bg-gradient-start: #002d57; /* Deep Institutional Blue */
+  --bg-gradient-end: #001a33;
+  --text-primary: #ffffff;
+  --text-secondary: #e2e8f0;
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.15);
   --success: #10b981;
+  --radius-lg: 16px;
+  --radius-md: 12px;
 }
 
 * {
@@ -39,12 +42,14 @@ body {
 /* Glassmorphism Classes */
 .glass-panel {
   background: var(--glass-bg);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--glass-border);
-  border-radius: 24px;
+  border-radius: var(--radius-lg);
   padding: 40px;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
 }
 
 /* Typography */
@@ -52,7 +57,7 @@ h1 {
   font-size: 2.5rem;
   font-weight: 800;
   margin-bottom: 1rem;
-  background: linear-gradient(to right, #818cf8, #f472b6);
+  background: linear-gradient(to right, #ffffff, var(--secondary));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: center;
@@ -95,24 +100,47 @@ p {
 .btn-primary {
   width: 100%;
   padding: 16px 24px;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 600;
   border: none;
-  border-radius: 12px;
-  background: linear-gradient(to right, var(--primary), var(--secondary));
-  color: white;
+  border-radius: var(--radius-md);
+  background: var(--secondary);
+  color: #000;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: all 0.2s ease;
   font-family: 'Outfit', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .btn-primary:hover {
+  background: var(--secondary-hover);
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(236, 72, 153, 0.3);
+  box-shadow: 0 8px 15px rgba(242, 145, 0, 0.4);
 }
 
 .btn-primary:active {
   transform: translateY(1px);
+}
+
+.btn-secondary {
+  width: 100%;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Outfit', sans-serif;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--text-secondary);
+  color: #fff;
 }
 
 /* Option Buttons */
@@ -120,23 +148,23 @@ p {
   width: 100%;
   padding: 20px;
   margin-bottom: 16px;
-  background: var(--glass-bg);
+  background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--glass-border);
-  border-radius: 16px;
+  border-radius: var(--radius-md);
   color: var(--text-primary);
   font-size: 1.1rem;
   text-align: left;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   font-family: 'Outfit', sans-serif;
   display: flex;
   align-items: center;
 }
 
 .option-btn:hover {
-  background: rgba(255, 255, 255, 0.1);
-  transform: translateY(-5px);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: var(--primary);
+  transform: scale(1.02);
+  border-color: var(--secondary);
 }
 
 /* Launchpad Specifics */
@@ -167,8 +195,8 @@ p {
   margin-bottom: 10px;
 }
 
-.icon-wrapper.quiz { background: rgba(99, 102, 241, 0.2); color: #818cf8; }
-.icon-wrapper.game { background: rgba(236, 72, 153, 0.2); color: #f472b6; }
+.icon-wrapper.quiz { background: rgba(0, 74, 142, 0.2); color: #fff; }
+.icon-wrapper.game { background: rgba(242, 145, 0, 0.2); color: var(--secondary); }
 .icon-wrapper.gallery { background: rgba(16, 185, 129, 0.2); color: #34d399; }
 .icon-wrapper.levemente { background: rgba(245, 158, 11, 0.2); color: #fbbf24; }
 
@@ -196,3 +224,4 @@ p {
     transform: translateY(0);
   }
 }
+

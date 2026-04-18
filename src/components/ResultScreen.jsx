@@ -1,5 +1,5 @@
-import React from 'react';
 import { Sparkles, Laptop, BookOpen, HandHeart, Mic, HeartPulse, MonitorSmartphone, Scissors, Home } from 'lucide-react';
+import { BrandFlight, LogoCircle } from './BrandElements';
 
 export default function ResultScreen({ name, scores, onRestart }) {
   const highestScoreObj = Object.entries(scores).reduce((max, curr) => curr[1] > max[1] ? curr : max);
@@ -47,7 +47,10 @@ export default function ResultScreen({ name, scores, onRestart }) {
 
   return (
     <div className="glass-panel fade-enter" style={{ textAlign: 'center' }}>
-      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
+      <LogoCircle />
+      <BrandFlight style={{ top: '10%', left: '-5%', transform: 'rotate(10deg) scale(1.2)', opacity: 0.05 }} />
+      
+      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px', position: 'relative', zIndex: 1 }}>
         {result.icon}
       </div>
       <h1>Incrível, {name}!</h1>

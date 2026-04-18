@@ -1,11 +1,14 @@
-import React from 'react';
 import { Gamepad2, GraduationCap, Camera, Heart } from 'lucide-react';
+import { BrandFlight, LogoCircle } from './BrandElements';
 
 export default function Launchpad({ onSelect }) {
   return (
     <div className="glass-panel fade-enter" style={{ textAlign: 'center', maxWidth: '800px' }}>
-      <h1>Bem-vindo!</h1>
-      <p>O que você deseja fazer hoje?</p>
+      <LogoCircle />
+      <BrandFlight className="top-left" style={{ top: '20px', left: '-20px', transform: 'rotate(-15deg)' }} />
+      
+      <h1 style={{ position: 'relative', zIndex: 1 }}>Sua Jornada no Senac</h1>
+      <p style={{ position: 'relative', zIndex: 1 }}>O que você deseja explorar hoje?</p>
       
       <div className="launchpad-grid">
         <button 

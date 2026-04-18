@@ -8,6 +8,9 @@ import Gallery from './components/Gallery';
 import BackgroundSlideshow from './components/BackgroundSlideshow';
 import LeveMenteHub from './components/LeveMenteHub';
 import SnakeGame from './components/SnakeGame';
+import CustomCursor from './components/CustomCursor';
+import ParticleBackground from './components/ParticleBackground';
+import SenacGuide from './components/SenacGuide';
 import { questions as allQuestions } from './questions';
 
 function App() {
@@ -57,7 +60,10 @@ function App() {
 
   return (
     <>
+      <CustomCursor />
+      <ParticleBackground />
       <BackgroundSlideshow />
+      <SenacGuide currentScreen={currentScreen} />
       {currentScreen === 'launchpad' && (
         <Launchpad onSelect={setCurrentScreen} />
       )}

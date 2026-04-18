@@ -39,6 +39,103 @@ body {
   padding: 20px;
 }
 
+/* Dashboard & Progress Bars */
+.stats-container {
+  margin: 30px 0;
+  text-align: left;
+}
+
+.stat-item {
+  margin-bottom: 20px;
+}
+
+.stat-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.progress-bar-bg {
+  height: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 10px rgba(242, 145, 0, 0.3);
+}
+
+/* Custom Cursor */
+.custom-cursor {
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--secondary);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s, border-color 0.3s, background-color 0.3s;
+}
+
+.custom-cursor-dot {
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+}
+
+.custom-cursor.hover {
+  width: 60px;
+  height: 60px;
+  background: rgba(242, 145, 0, 0.1);
+  border-color: white;
+}
+
+/* Particles */
+.particle-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.3;
+  box-shadow: 0 0 10px white;
+  animation: float linear infinite;
+}
+
+@keyframes float {
+  from { transform: translateY(100vh) translateX(0); }
+  to { transform: translateY(-10vh) translateX(50px); }
+}
+
+@media (max-width: 1024px) {
+  .custom-cursor, .custom-cursor-dot { display: none; }
+}
+
 /* Glassmorphism Classes */
 .glass-panel {
   background: var(--glass-bg);
@@ -50,6 +147,26 @@ body {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
   position: relative;
   overflow: hidden;
+}
+
+.glass-panel::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent 45%, rgba(255, 255, 255, 0.05) 50%, transparent 55%);
+  transform: rotate(45deg);
+  transition: all 0.6s ease;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.glass-panel:hover::after {
+  left: 100%;
+  top: 100%;
+  opacity: 1;
 }
 
 /* Typography */

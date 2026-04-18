@@ -1,50 +1,44 @@
 import React from 'react';
-import { Gamepad2, GraduationCap } from 'lucide-react';
+import { Gamepad2, GraduationCap, Camera } from 'lucide-react';
 
 export default function Launchpad({ onSelect }) {
   return (
-    <div className="glass-panel fade-enter" style={{ textAlign: 'center' }}>
+    <div className="glass-panel fade-enter" style={{ textAlign: 'center', maxWidth: '800px' }}>
       <h1>Bem-vindo!</h1>
       <p>O que você deseja fazer hoje?</p>
       
-      <div style={{ 
-        display: 'grid', 
-        gridTemplateColumns: '1fr 1fr', 
-        gap: '20px', 
-        marginTop: '20px' 
-      }}>
+      <div className="launchpad-grid">
         <button 
           onClick={() => onSelect('intro')}
-          className="option-btn"
-          style={{ 
-            flexDirection: 'column', 
-            alignItems: 'center', 
-            justifyContent: 'center',
-            padding: '40px 20px',
-            textAlign: 'center',
-            gap: '15px'
-          }}
+          className="option-btn launch-card"
         >
-          <GraduationCap size={48} color="#6366f1" />
-          <span style={{ fontWeight: '600', fontSize: '1.2rem' }}>Iniciar Quiz Vocacional</span>
-          <span style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>Descubra sua carreira ideal</span>
+          <div className="icon-wrapper quiz">
+            <GraduationCap size={40} />
+          </div>
+          <span className="card-title">Quiz Vocacional</span>
+          <span className="card-desc">Descubra sua carreira ideal</span>
         </button>
 
         <button 
           onClick={() => onSelect('tictactoe')}
-          className="option-btn"
-          style={{ 
-            flexDirection: 'column', 
-            alignItems: 'center', 
-            justifyContent: 'center',
-            padding: '40px 20px',
-            textAlign: 'center',
-            gap: '15px'
-          }}
+          className="option-btn launch-card"
         >
-          <Gamepad2 size={48} color="#ec4899" />
-          <span style={{ fontWeight: '600', fontSize: '1.2rem' }}>Jogar Jogo da Velha</span>
-          <span style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>Relaxe um pouco</span>
+          <div className="icon-wrapper game">
+            <Gamepad2 size={40} />
+          </div>
+          <span className="card-title">Jogo da Velha</span>
+          <span className="card-desc">Relaxe com um desafio</span>
+        </button>
+
+        <button 
+          onClick={() => onSelect('gallery')}
+          className="option-btn launch-card"
+        >
+          <div className="icon-wrapper gallery">
+            <Camera size={40} />
+          </div>
+          <span className="card-title">Conheça o Senac</span>
+          <span className="card-desc">Veja nossa infraestrutura</span>
         </button>
       </div>
     </div>

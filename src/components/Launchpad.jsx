@@ -1,7 +1,11 @@
 import { Gamepad2, GraduationCap, Camera, Heart } from 'lucide-react';
 import { BrandFlight, LogoCircle } from './BrandElements';
+import LocationBanner from './LocationBanner';
+import MapModal from './MapModal';
+import { useState } from 'react';
 
 export default function Launchpad({ onSelect }) {
+  const [isMapOpen, setIsMapOpen] = useState(false);
   return (
     <div className="glass-panel fade-enter" style={{ textAlign: 'center', maxWidth: '800px' }}>
       <LogoCircle />
@@ -55,6 +59,10 @@ export default function Launchpad({ onSelect }) {
           <span className="card-desc">Saúde mental e bem-estar</span>
         </button>
       </div>
+
+      <LocationBanner onClick={() => setIsMapOpen(true)} />
+
+      <MapModal isOpen={isMapOpen} onClose={() => setIsMapOpen(false)} />
     </div>
   );
 }

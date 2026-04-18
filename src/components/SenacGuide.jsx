@@ -95,7 +95,7 @@ export default function SenacGuide({ currentScreen }) {
             <div className="qr-section" style={{ textAlign: 'center', marginBottom: '15px' }}>
               <div style={{ background: 'white', padding: '10px', borderRadius: '12px', display: 'inline-block', margin: '0 auto 10px', boxShadow: '0 5px 15px rgba(0,0,0,0.2)' }}>
                 <img 
-                  src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://wa.me/5551993408666" 
+                  src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://wa.me/5551984960488" 
                   alt="WhatsApp QR Code" 
                   style={{ width: '180px', display: 'block' }} 
                 />
@@ -104,7 +104,7 @@ export default function SenacGuide({ currentScreen }) {
               <span style={{ fontSize: '0.75rem', fontWeight: '800', color: 'var(--secondary)' }}>OU CLIQUE NO BOTÃO</span>
             </div>
             <a 
-              href="https://wa.me/5551993408666" 
+              href="https://wa.me/5551984960488" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="btn-primary"

@@ -1,4 +1,4 @@
-import { Gamepad2, GraduationCap, Camera, Heart, Apple } from 'lucide-react';
+import { Gamepad2, GraduationCap, Camera, Heart, Apple, Brain } from 'lucide-react';
 import { BrandFlight, LogoCircle } from './BrandElements';
 import LocationBanner from './LocationBanner';
 import MapModal from './MapModal';
@@ -68,6 +68,17 @@ export default function Launchpad({ onSelect }) {
           </div>
           <span className="card-title">Jogo da Cobrinha</span>
           <span className="card-desc">Diversão clássica</span>
+        </button>
+
+        <button 
+          onClick={() => onSelect('logicQuiz')}
+          className="option-btn launch-card"
+        >
+          <div className="icon-wrapper logic" style={{ background: 'rgba(168, 85, 247, 0.2)', color: '#a855f7' }}>
+            <Brain size={40} />
+          </div>
+          <span className="card-title">Desafio Lógico</span>
+          <span className="card-desc">Teste seu raciocínio</span>
         </button>
       </div>
 

@@ -11,6 +11,7 @@ import SnakeGame from './components/SnakeGame';
 import CustomCursor from './components/CustomCursor';
 import ParticleBackground from './components/ParticleBackground';
 import SenacGuide from './components/SenacGuide';
+import LogicQuiz from './components/LogicQuiz';
 import { questions as allQuestions } from './questions';
 
 function App() {
@@ -86,6 +87,10 @@ function App() {
 
       {currentScreen === 'snake' && (
         <SnakeGame onBack={() => setCurrentScreen('launchpad')} />
+      )}
+
+      {currentScreen === 'logicQuiz' && (
+        <LogicQuiz onBack={() => setCurrentScreen('launchpad')} />
       )}
 
       {currentScreen === 'quiz' && quizQuestions.length > 0 && (

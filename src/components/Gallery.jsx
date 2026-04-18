@@ -11,12 +11,12 @@ import img5 from '../assets/images/078f14e08f0a61124b9605aaf84845ded04fdf.jpeg';
 import img6 from '../assets/images/2024-04-03.webp';
 
 const images = [
-  { id: 1, src: img1, title: "Nosso Campus" },
-  { id: 2, src: img2, title: "Espaços Modernos" },
-  { id: 3, src: img3, title: "Laboratórios" },
-  { id: 4, src: img4, title: "Área de Convivência" },
-  { id: 5, src: img5, title: "Ambiente Criativo" },
-  { id: 6, src: img6, title: "Tecnologia Senac" },
+  { id: 1, src: img1 },
+  { id: 2, src: img2 },
+  { id: 3, src: img3 },
+  { id: 4, src: img4 },
+  { id: 5, src: img5 },
+  { id: 6, src: img6 },
 ];
 
 export default function Gallery({ onBack }) {
@@ -35,10 +35,7 @@ export default function Gallery({ onBack }) {
       <div className="gallery-grid">
         {images.map(img => (
           <div key={img.id} className="gallery-item">
-            <img src={img.src} alt={img.title} />
-            <div className="gallery-overlay">
-              <span>{img.title}</span>
-            </div>
+            <img src={img.src} alt="Galeria Senac" />
           </div>
         ))}
       </div>

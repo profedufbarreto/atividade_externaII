@@ -1,5 +1,5 @@
 import React from 'react';
-import { Gamepad2, GraduationCap, Camera } from 'lucide-react';
+import { Gamepad2, GraduationCap, Camera, Heart } from 'lucide-react';
 
 export default function Launchpad({ onSelect }) {
   return (
@@ -39,6 +39,17 @@ export default function Launchpad({ onSelect }) {
           </div>
           <span className="card-title">Conheça o Senac</span>
           <span className="card-desc">Veja nossa infraestrutura</span>
+        </button>
+
+        <button 
+          onClick={() => onSelect('levemente')}
+          className="option-btn launch-card"
+        >
+          <div className="icon-wrapper levemente">
+            <Heart size={40} />
+          </div>
+          <span className="card-title">LeveMente</span>
+          <span className="card-desc">Saúde mental e bem-estar</span>
         </button>
       </div>
     </div>

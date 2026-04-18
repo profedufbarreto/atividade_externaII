@@ -5,6 +5,8 @@ import QuizScreen from './components/QuizScreen';
 import ResultScreen from './components/ResultScreen';
 import TicTacToe from './components/TicTacToe';
 import Gallery from './components/Gallery';
+import BackgroundSlideshow from './components/BackgroundSlideshow';
+import LeveMenteHub from './components/LeveMenteHub';
 import { questions as allQuestions } from './questions';
 
 function App() {
@@ -54,6 +56,7 @@ function App() {
 
   return (
     <>
+      <BackgroundSlideshow />
       {currentScreen === 'launchpad' && (
         <Launchpad onSelect={setCurrentScreen} />
       )}
@@ -68,6 +71,10 @@ function App() {
 
       {currentScreen === 'gallery' && (
         <Gallery onBack={() => setCurrentScreen('launchpad')} />
+      )}
+
+      {currentScreen === 'levemente' && (
+        <LeveMenteHub onBack={() => setCurrentScreen('launchpad')} />
       )}
 
       {currentScreen === 'quiz' && quizQuestions.length > 0 && (

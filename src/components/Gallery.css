@@ -74,26 +74,6 @@
   transition: transform 0.8s ease;
 }
 
-.gallery-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-  display: flex;
-  align-items: flex-end;
-  padding: 20px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.gallery-overlay span {
-  color: white;
-  font-weight: 600;
-  font-size: 1.1rem;
-  transform: translateY(10px);
-  transition: transform 0.3s ease;
-}
-
-/* Hover Effects */
 .gallery-item:hover {
   transform: translateY(-10px);
   border-color: var(--primary);
@@ -102,14 +82,6 @@
 
 .gallery-item:hover img {
   transform: scale(1.1);
-}
-
-.gallery-item:hover .gallery-overlay {
-  opacity: 1;
-}
-
-.gallery-item:hover .gallery-overlay span {
-  transform: translateY(0);
 }
 
 .gallery-footer {

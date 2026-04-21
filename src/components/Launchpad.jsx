@@ -1,4 +1,4 @@
-import { Gamepad2, GraduationCap, Camera, Heart, Apple, Brain, Shirt } from 'lucide-react';
+import { Gamepad2, GraduationCap, Camera, Heart, Apple, Brain, Shirt, Stethoscope } from 'lucide-react';
 import { BrandFlight, LogoCircle } from './BrandElements';
 import LocationBanner from './LocationBanner';
 import MapModal from './MapModal';
@@ -91,6 +91,18 @@ export default function Launchpad({ onSelect }) {
           </div>
           <span className="card-title">Mundo da Moda</span>
           <span className="card-desc">Paleta de cores & estilo</span>
+        </button>
+
+        <button 
+          onClick={() => onSelect('healthHub')}
+          className="option-btn launch-card"
+          id="btn-launchpad-health"
+        >
+          <div className="icon-wrapper health">
+            <Stethoscope size={40} />
+          </div>
+          <span className="card-title">Saúde & Bem-estar</span>
+          <span className="card-desc">Check-up & reflexos</span>
         </button>
       </div>
 

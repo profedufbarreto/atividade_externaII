@@ -13,6 +13,7 @@ import ParticleBackground from './components/ParticleBackground';
 import SenacGuide from './components/SenacGuide';
 import LogicQuiz from './components/LogicQuiz';
 import FashionHub from './components/FashionHub';
+import HealthHub from './components/HealthHub';
 import { questions as allQuestions } from './questions';
 
 function App() {
@@ -96,6 +97,10 @@ function App() {
 
       {currentScreen === 'fashionHub' && (
         <FashionHub onBack={() => setCurrentScreen('launchpad')} />
+      )}
+
+      {currentScreen === 'healthHub' && (
+        <HealthHub onBack={() => setCurrentScreen('launchpad')} />
       )}
 
       {currentScreen === 'quiz' && quizQuestions.length > 0 && (

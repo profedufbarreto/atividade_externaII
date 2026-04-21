@@ -1,4 +1,4 @@
-import { Gamepad2, GraduationCap, Camera, Heart, Apple, Brain } from 'lucide-react';
+import { Gamepad2, GraduationCap, Camera, Heart, Apple, Brain, Shirt } from 'lucide-react';
 import { BrandFlight, LogoCircle } from './BrandElements';
 import LocationBanner from './LocationBanner';
 import MapModal from './MapModal';
@@ -79,6 +79,18 @@ export default function Launchpad({ onSelect }) {
           </div>
           <span className="card-title">Desafio Lógico</span>
           <span className="card-desc">Teste seu raciocínio</span>
+        </button>
+
+        <button 
+          onClick={() => onSelect('fashionHub')}
+          className="option-btn launch-card"
+          id="btn-launchpad-fashion"
+        >
+          <div className="icon-wrapper fashion">
+            <Shirt size={40} />
+          </div>
+          <span className="card-title">Mundo da Moda</span>
+          <span className="card-desc">Paleta de cores & estilo</span>
         </button>
       </div>
 

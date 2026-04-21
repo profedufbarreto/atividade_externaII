@@ -55,23 +55,51 @@ export default function TicTacToe({ onBack }) {
     }
   };
 
-  const findBestMove = (currentBoard) => {
-    let bestScore = -Infinity;
-    let move = -1;
+  // Returns all moves ranked by minimax score (best to worst)
+  const getRankedMoves = (currentBoard) => {
+    const moves = [];
     for (let i = 0; i < 9; i++) {
       if (!currentBoard[i]) {
         currentBoard[i] = 'O';
         const score = minimax(currentBoard, 0, false);
         currentBoard[i] = null;
-        if (score > bestScore) {
-          bestScore = score;
-          move = i;
-        }
+        moves.push({ index: i, score });
       }
     }
-    return move;
+    return moves.sort((a, b) => b.score - a.score);
   };
 
+  // Hard: plays best move 65% of the time, otherwise picks a non-optimal but strategic move
+  const findHardMove = (currentBoard) => {
+    const ranked = getRankedMoves(currentBoard);
+    if (ranked.length === 0) return -1;
+
+    // Always block an immediate win by the player (never look stupid)
+    const blockWin = ranked.find(m => {
+      const test = [...currentBoard];
+      test[m.index] = 'X';
+      return calculateWinner(test) !== null;
+    });
+
+    // Always take a winning move if available
+    const takeWin = ranked.find(m => {
+      const test = [...currentBoard];
+      test[m.index] = 'O';
+      return calculateWinner(test) !== null;
+    });
+    if (takeWin) return takeWin.index;
+    if (blockWin) return blockWin.index;
+
+    // 65% chance to play best move, otherwise play 2nd or 3rd best
+    if (Math.random() < 0.65 || ranked.length === 1) {
+      return ranked[0].index;
+    }
+    // Pick randomly among the suboptimal options (not the very best)
+    const suboptimal = ranked.slice(1);
+    return suboptimal[Math.floor(Math.random() * suboptimal.length)].index;
+  };
+
+  // Easy: purely random
   const findRandomMove = (currentBoard) => {
     const emptyCells = currentBoard.map((cell, i) => cell === null ? i : null).filter(val => val !== null);
     if (emptyCells.length === 0) return -1;
@@ -103,7 +131,7 @@ export default function TicTacToe({ onBack }) {
       const timer = setTimeout(() => {
         let move = -1;
         if (difficulty === 'hard') {
-          move = findBestMove([...board]);
+          move = findHardMove([...board]);
         } else {
           move = findRandomMove([...board]);
         }

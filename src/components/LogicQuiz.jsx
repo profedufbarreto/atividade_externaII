@@ -75,7 +75,7 @@ export default function LogicQuiz({ onBack }) {
   const selectCard = (cardType) => {
     let toEliminate = [];
     const wrongOptions = Object.keys(currentQuestion.options).filter(opt => opt !== currentQuestion.answer);
-    
+
     if (cardType === 'A') {
       toEliminate = [wrongOptions[Math.floor(Math.random() * wrongOptions.length)]];
     } else if (cardType === '2') {
@@ -93,14 +93,14 @@ export default function LogicQuiz({ onBack }) {
     <div className="quiz-container fade-enter">
       <Brain size={64} className="main-icon pulse" />
       <h1>Desafio de Lógica</h1>
-      <p>Bem-vindo ao teste de raciocínio do Senac! <br/> Começaremos com o básico e logo as coisas ficam sérias.</p>
-      
+      <p>Bem-vindo ao teste de raciocínio do Senac! <br /> Começaremos com o básico e logo as coisas ficam sérias.</p>
+
       <form onSubmit={handleStart} className="name-form">
         <div className="input-group">
           <User className="input-icon" />
-          <input 
-            type="text" 
-            placeholder="Digite seu nome..." 
+          <input
+            type="text"
+            placeholder="Digite seu nome..."
             value={playerName}
             onChange={(e) => setPlayerName(e.target.value)}
             className="input-field"
@@ -147,16 +147,16 @@ export default function LogicQuiz({ onBack }) {
       </div>
 
       <div className="help-actions">
-        <button 
-          onClick={handleSkip} 
+        <button
+          onClick={handleSkip}
           className="help-btn skip"
           disabled={skipsLeft === 0}
         >
           <SkipForward size={20} /> Pular ({skipsLeft})
         </button>
-        
-        <button 
-          onClick={openCardHelp} 
+
+        <button
+          onClick={openCardHelp}
           className="help-btn cards"
           disabled={helpUsed}
         >
@@ -171,7 +171,7 @@ export default function LogicQuiz({ onBack }) {
       <CreditCard size={64} className="main-icon" />
       <h1>Escolha uma Carta</h1>
       <p>Uma delas pode te salvar, a outra... nem tanto.</p>
-      
+
       <div className="card-selector">
         <button onClick={() => selectCard('A')} className="magic-card card-a">
           <div className="card-inner">A</div>
@@ -214,10 +214,10 @@ export default function LogicQuiz({ onBack }) {
       </div>
 
       <button onClick={() => window.location.reload()} className="btn-primary">
-          Jogar Novamente
+        Jogar Novamente
       </button>
       <button onClick={onBack} className="btn-secondary" style={{ marginTop: '10px' }}>
-          Voltar ao Início
+        Voltar ao Início
       </button>
     </div>
   );

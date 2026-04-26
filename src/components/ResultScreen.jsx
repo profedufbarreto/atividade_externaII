@@ -6,47 +6,23 @@ export default function ResultScreen({ name, scores, onRestart }) {
   const topCategory = highestScoreObj[0];
 
   const resultsData = {
-    Health: {
-      title: "Saúde e Bem-estar",
-      description: "Você tem um coração enorme e grande empatia. Trabalhar com enfermagem, medicina ou terapias seria incrível, pois seu foco é cuidar das pessoas.",
+    Saude: {
+      title: "Saúde e Bem-estar (Senac NH)",
+      description: "Seu perfil é voltado ao cuidado e à empatia! No Senac Novo Hamburgo, você pode trilhar caminhos incríveis como o Técnico em Enfermagem, Massoterapia ou Estética. Sua dedicação pode transformar vidas e promover o bem-estar da nossa comunidade.",
       icon: <HeartPulse size={64} color="#10b981" />,
-      stats: { demand: 95, tech: 80, human: 100 }
+      stats: { demand: 98, tech: 85, human: 100 }
     },
-    IT: {
-      title: "Tecnologia da Informação (TI)",
-      description: "Você é super analítico e ama tecnologia! O mundo do desenvolvimento de sistemas, engenharia de software e inovação digital está a sua espera.",
+    Tecnologia: {
+      title: "Tecnologia e Inovação (Senac NH)",
+      description: "Você respira inovação e lógica! O mundo digital precisa de mentes como a sua. Cursos como Técnico em Informática, Técnico em ADS ou Programação Python são as escolhas perfeitas para você ser o próximo protagonista da tecnologia na nossa região.",
       icon: <MonitorSmartphone size={64} color="#3b82f6" />,
-      stats: { demand: 98, tech: 100, human: 60 }
+      stats: { demand: 99, tech: 100, human: 75 }
     },
-    Fashion: {
-      title: "Moda e Design",
-      description: "Seu lado criativo é fortíssimo! Expressão corporal, design gráfico, artes visuais e moda combinam inteiramente com você.",
+    Moda: {
+      title: "Moda e Design (Senac NH)",
+      description: "Sua criatividade e senso estético são únicos! No Senac Novo Hamburgo, você pode transformar seu talento em profissão com o Técnico em Design de Moda, Consultoria de Imagem ou cursos de Modelagem e Costura. O mundo da moda espera pelo seu estilo!",
       icon: <Scissors size={64} color="#ec4899" />,
-      stats: { demand: 75, tech: 70, human: 85 }
-    },
-    EAD: {
-      title: "Cursos EAD",
-      description: "Você valoriza a flexibilidade, a independência e o aprendizado no seu próprio ritmo. Os Cursos EAD são a escolha perfeita para você se especializar de onde estiver!",
-      icon: <BookOpen size={64} color="#8b5cf6" />,
-      stats: { demand: 90, tech: 85, human: 70 }
-    },
-    Tech: {
-      title: "Informática Básica / Formação Excel (FIC)",
-      description: "Sua mente é genial para a lógica! Dominar o computador e as planilhas vai alavancar seu futuro. Os cursos de Informática Básica e Excel são a sua cara.",
-      icon: <Laptop size={64} color="#3b82f6" />,
-      stats: { demand: 85, tech: 90, human: 50 }
-    },
-    Massage: {
-      title: "Massagista (Curso FIC)",
-      description: "Você é puro acolhimento! O curso FIC de Massagista vai colocar seu dom para acalmar as pessoas e proporcionar bem-estar nas suas próprias mãos, literalmente.",
-      icon: <HandHeart size={64} color="#10b981" />,
-      stats: { demand: 80, tech: 75, human: 95 }
-    },
-    Communication: {
-      title: "Dicção, Desinibição e Oratória (Curso FIC)",
-      description: "Que carisma! Você nasceu para brilhar. O curso FIC de Dicção, Desinibição e Oratória vai refinar seu talento e te levar muito longe falando com o público.",
-      icon: <Mic size={64} color="#ec4899" />,
-      stats: { demand: 88, tech: 50, human: 100 }
+      stats: { demand: 85, tech: 70, human: 90 }
     }
   };
 

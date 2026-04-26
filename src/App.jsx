@@ -23,13 +23,9 @@ function App() {
   const [quizQuestions, setQuizQuestions] = useState([]);
 
   const [scores, setScores] = useState({
-    Health: 0,
-    IT: 0,
-    Fashion: 0,
-    Tech: 0,
-    Massage: 0,
-    Communication: 0,
-    EAD: 0
+    Moda: 0,
+    Saude: 0,
+    Tecnologia: 0
   });
 
   const handleStart = (name) => {
@@ -57,7 +53,7 @@ function App() {
   const handleRestart = () => {
     setUserName('');
     setCurrentQuestionIndex(0);
-    setScores({ Health: 0, IT: 0, Fashion: 0, Tech: 0, Massage: 0, Communication: 0, EAD: 0 });
+    setScores({ Moda: 0, Saude: 0, Tecnologia: 0 });
     setCurrentScreen('intro');
   };
 

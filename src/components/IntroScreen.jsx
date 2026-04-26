@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
 import { BrandFlight, LogoCircle } from './BrandElements';
 
